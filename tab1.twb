@@ -1,0 +1,1005 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20204.21.0315.1000                               -->
+<workbook original-version='18.1' source-build='2020.4.3 (20204.21.0315.1000)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='23-27' caption='Age' datatype='integer' name='[Age Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <aliases>
+          <alias key='0' value='&lt;11' />
+          <alias key='1' value='12-18' />
+          <alias key='2' value='19-22' />
+          <alias key='3' value='23-27' />
+          <alias key='4' value='28-33' />
+          <alias key='5' value='33-40' />
+          <alias key='6' value='41+' />
+        </aliases>
+        <members>
+          <member alias='&lt;11' value='0' />
+          <member alias='12-18' value='1' />
+          <member alias='19-22' value='2' />
+          <member alias='23-27' value='3' />
+          <member alias='28-33' value='4' />
+          <member alias='33-40' value='5' />
+          <member alias='41+' value='6' />
+        </members>
+      </column>
+      <column caption='Fare' datatype='real' name='[Fare Parameter]' param-domain-type='range' role='measure' type='quantitative' value='418.78234757378692'>
+        <calculation class='tableau' formula='418.78234757378692' />
+        <range max='512.32920000000001' min='0.0' />
+      </column>
+      <column caption='# of parents/children with you' datatype='integer' name='[Parch Parameter]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+        <calculation class='tableau' formula='4' />
+        <members>
+          <member value='0' />
+          <member value='1' />
+          <member value='2' />
+          <member value='3' />
+          <member value='4' />
+          <member value='5' />
+          <member value='6' />
+          <member value='7' />
+          <member value='8' />
+          <member value='9' />
+        </members>
+      </column>
+      <column caption='Class' datatype='integer' name='[Pclass Parameter]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+        <calculation class='tableau' formula='2' />
+        <members>
+          <member value='1' />
+          <member value='2' />
+          <member value='3' />
+        </members>
+      </column>
+      <column alias='male' caption='Gender' datatype='integer' name='[Sex Parameter]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
+        <aliases>
+          <alias key='0' value='male' />
+          <alias key='1' value='female' />
+        </aliases>
+        <members>
+          <member alias='male' value='0' />
+          <member alias='female' value='1' />
+        </members>
+      </column>
+      <column caption='# of siblings/spouses with you' datatype='integer' name='[Sib Sp Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <members>
+          <member value='0' />
+          <member value='1' />
+          <member value='2' />
+          <member value='3' />
+          <member value='4' />
+          <member value='5' />
+          <member value='8' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='train' inline='true' name='federated.113eblu0sv9l1g1e7ckks1xct03y' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='train' name='textscan.0goh9ln1b85sjm1bcen7b071o043'>
+            <connection class='textscan' directory='C:/Users/UserK/Desktop/tabprojects/titanic' filename='train.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0goh9ln1b85sjm1bcen7b071o043' name='train.csv' table='[train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='PassengerId' ordinal='0' />
+            <column datatype='integer' name='Survived' ordinal='1' />
+            <column datatype='integer' name='Pclass' ordinal='2' />
+            <column datatype='string' name='Name' ordinal='3' />
+            <column datatype='string' name='Sex' ordinal='4' />
+            <column datatype='real' name='Age' ordinal='5' />
+            <column datatype='integer' name='SibSp' ordinal='6' />
+            <column datatype='integer' name='Parch' ordinal='7' />
+            <column datatype='string' name='Ticket' ordinal='8' />
+            <column datatype='real' name='Fare' ordinal='9' />
+            <column datatype='string' name='Cabin' ordinal='10' />
+            <column datatype='string' name='Embarked' ordinal='11' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0goh9ln1b85sjm1bcen7b071o043' name='train.csv' table='[train#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='PassengerId' ordinal='0' />
+            <column datatype='integer' name='Survived' ordinal='1' />
+            <column datatype='integer' name='Pclass' ordinal='2' />
+            <column datatype='string' name='Name' ordinal='3' />
+            <column datatype='string' name='Sex' ordinal='4' />
+            <column datatype='real' name='Age' ordinal='5' />
+            <column datatype='integer' name='SibSp' ordinal='6' />
+            <column datatype='integer' name='Parch' ordinal='7' />
+            <column datatype='string' name='Ticket' ordinal='8' />
+            <column datatype='real' name='Fare' ordinal='9' />
+            <column datatype='string' name='Cabin' ordinal='10' />
+            <column datatype='string' name='Embarked' ordinal='11' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PassengerId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PassengerId]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>PassengerId</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Survived</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Survived]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Survived</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pclass</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pclass]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Pclass</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sex]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Sex</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SibSp</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SibSp]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>SibSp</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Parch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Parch]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Parch</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ticket</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Ticket]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Ticket</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fare</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fare]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Fare</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cabin</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cabin]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Cabin</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Embarked</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Embarked]</local-name>
+            <parent-name>[train.csv]</parent-name>
+            <remote-alias>Embarked</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train.csv_F78BC2851EC2464893717FD33FB14E97]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Survival Prediction' datatype='real' name='[Calculation_677228834931060738]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;titanic_survival_predictor&apos;,_arg1,_arg2,_arg3,_arg4,_arg5,_arg6)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Age Parameter],[Parameters].[Sex Parameter],[Parameters].[Pclass Parameter],[Parameters].[Fare Parameter],[Parameters].[Sib Sp Parameter],[Parameters].[Parch Parameter])*100'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='death prediction' datatype='real' name='[Calculation_677228834946052099]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;titanic_death_predictor&apos;,_arg1,_arg2,_arg3,_arg4,_arg5,_arg6)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Age Parameter],[Parameters].[Sex Parameter],[Parameters].[Pclass Parameter],[Parameters].[Fare Parameter],[Parameters].[Sib Sp Parameter],[Parameters].[Parch Parameter])*100'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Passenger Id' datatype='integer' name='[PassengerId]' role='dimension' type='ordinal' />
+      <column caption='Sib Sp' datatype='integer' name='[SibSp]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='train.csv' datatype='table' name='[__tableau_internal_object_id__].[train.csv_F78BC2851EC2464893717FD33FB14E97]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;South Korea&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='23-27' caption='Age' datatype='integer' name='[Age Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <aliases>
+            <alias key='0' value='&lt;11' />
+            <alias key='1' value='12-18' />
+            <alias key='2' value='19-22' />
+            <alias key='3' value='23-27' />
+            <alias key='4' value='28-33' />
+            <alias key='5' value='33-40' />
+            <alias key='6' value='41+' />
+          </aliases>
+        </column>
+        <column caption='Fare' datatype='real' name='[Fare Parameter]' param-domain-type='range' role='measure' type='quantitative' value='418.78234757378692'>
+          <calculation class='tableau' formula='418.78234757378692' />
+          <range max='512.32920000000001' min='0.0' />
+        </column>
+        <column caption='# of parents/children with you' datatype='integer' name='[Parch Parameter]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+        </column>
+        <column caption='Class' datatype='integer' name='[Pclass Parameter]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+        </column>
+        <column alias='male' caption='Gender' datatype='integer' name='[Sex Parameter]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <aliases>
+            <alias key='0' value='male' />
+            <alias key='1' value='female' />
+          </aliases>
+        </column>
+        <column caption='# of siblings/spouses with you' datatype='integer' name='[Sib Sp Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='train.csv' id='train.csv_F78BC2851EC2464893717FD33FB14E97'>
+            <properties context=''>
+              <relation connection='textscan.0goh9ln1b85sjm1bcen7b071o043' name='train.csv' table='[train#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+                  <column datatype='integer' name='PassengerId' ordinal='0' />
+                  <column datatype='integer' name='Survived' ordinal='1' />
+                  <column datatype='integer' name='Pclass' ordinal='2' />
+                  <column datatype='string' name='Name' ordinal='3' />
+                  <column datatype='string' name='Sex' ordinal='4' />
+                  <column datatype='real' name='Age' ordinal='5' />
+                  <column datatype='integer' name='SibSp' ordinal='6' />
+                  <column datatype='integer' name='Parch' ordinal='7' />
+                  <column datatype='string' name='Ticket' ordinal='8' />
+                  <column datatype='real' name='Fare' ordinal='9' />
+                  <column datatype='string' name='Cabin' ordinal='10' />
+                  <column datatype='string' name='Embarked' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.113eblu0sv9l1g1e7ckks1xct03y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='23-27' caption='Age' datatype='integer' name='[Age Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+              <aliases>
+                <alias key='0' value='&lt;11' />
+                <alias key='1' value='12-18' />
+                <alias key='2' value='19-22' />
+                <alias key='3' value='23-27' />
+                <alias key='4' value='28-33' />
+                <alias key='5' value='33-40' />
+                <alias key='6' value='41+' />
+              </aliases>
+            </column>
+            <column caption='Fare' datatype='real' name='[Fare Parameter]' param-domain-type='range' role='measure' type='quantitative' value='418.78234757378692'>
+              <calculation class='tableau' formula='418.78234757378692' />
+              <range max='512.32920000000001' min='0.0' />
+            </column>
+            <column caption='# of parents/children with you' datatype='integer' name='[Parch Parameter]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+            </column>
+            <column caption='Class' datatype='integer' name='[Pclass Parameter]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+            </column>
+            <column alias='male' caption='Gender' datatype='integer' name='[Sex Parameter]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='male' />
+                <alias key='1' value='female' />
+              </aliases>
+            </column>
+            <column caption='# of siblings/spouses with you' datatype='integer' name='[Sib Sp Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.113eblu0sv9l1g1e7ckks1xct03y'>
+            <column caption='death prediction' datatype='real' name='[Calculation_677228834946052099]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;titanic_death_predictor&apos;,_arg1,_arg2,_arg3,_arg4,_arg5,_arg6)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Age Parameter],[Parameters].[Sex Parameter],[Parameters].[Pclass Parameter],[Parameters].[Fare Parameter],[Parameters].[Sib Sp Parameter],[Parameters].[Parch Parameter])*100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[Calculation_677228834946052099]' derivation='User' name='[usr:Calculation_677228834946052099:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.113eblu0sv9l1g1e7ckks1xct03y].[usr:Calculation_677228834946052099:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{BA02925D-409A-475E-9767-6183CC9B2C19}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train' name='federated.113eblu0sv9l1g1e7ckks1xct03y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='23-27' caption='Age' datatype='integer' name='[Age Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+              <aliases>
+                <alias key='0' value='&lt;11' />
+                <alias key='1' value='12-18' />
+                <alias key='2' value='19-22' />
+                <alias key='3' value='23-27' />
+                <alias key='4' value='28-33' />
+                <alias key='5' value='33-40' />
+                <alias key='6' value='41+' />
+              </aliases>
+            </column>
+            <column caption='Fare' datatype='real' name='[Fare Parameter]' param-domain-type='range' role='measure' type='quantitative' value='418.78234757378692'>
+              <calculation class='tableau' formula='418.78234757378692' />
+              <range max='512.32920000000001' min='0.0' />
+            </column>
+            <column caption='# of parents/children with you' datatype='integer' name='[Parch Parameter]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+            </column>
+            <column caption='Class' datatype='integer' name='[Pclass Parameter]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+            </column>
+            <column alias='male' caption='Gender' datatype='integer' name='[Sex Parameter]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='male' />
+                <alias key='1' value='female' />
+              </aliases>
+            </column>
+            <column caption='# of siblings/spouses with you' datatype='integer' name='[Sib Sp Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.113eblu0sv9l1g1e7ckks1xct03y'>
+            <column caption='Survival Prediction' datatype='real' name='[Calculation_677228834931060738]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&quot;return tabpy.query(&apos;titanic_survival_predictor&apos;,_arg1,_arg2,_arg3,_arg4,_arg5,_arg6)[&apos;response&apos;]&quot;,&#13;&#10;[Parameters].[Age Parameter],[Parameters].[Sex Parameter],[Parameters].[Pclass Parameter],[Parameters].[Fare Parameter],[Parameters].[Sib Sp Parameter],[Parameters].[Parch Parameter])*100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[Calculation_677228834931060738]' derivation='User' name='[usr:Calculation_677228834931060738:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.113eblu0sv9l1g1e7ckks1xct03y].[usr:Calculation_677228834931060738:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{5303937B-84BC-4FC1-9489-B7226D7C324B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='23-27' caption='Age' datatype='integer' name='[Age Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <aliases>
+            <alias key='0' value='&lt;11' />
+            <alias key='1' value='12-18' />
+            <alias key='2' value='19-22' />
+            <alias key='3' value='23-27' />
+            <alias key='4' value='28-33' />
+            <alias key='5' value='33-40' />
+            <alias key='6' value='41+' />
+          </aliases>
+          <members>
+            <member alias='&lt;11' value='0' />
+            <member alias='12-18' value='1' />
+            <member alias='19-22' value='2' />
+            <member alias='23-27' value='3' />
+            <member alias='28-33' value='4' />
+            <member alias='33-40' value='5' />
+            <member alias='41+' value='6' />
+          </members>
+        </column>
+        <column caption='Fare' datatype='real' name='[Fare Parameter]' param-domain-type='range' role='measure' type='quantitative' value='418.78234757378692'>
+          <calculation class='tableau' formula='418.78234757378692' />
+          <range max='512.32920000000001' min='0.0' />
+        </column>
+        <column caption='# of parents/children with you' datatype='integer' name='[Parch Parameter]' param-domain-type='list' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+          <members>
+            <member value='0' />
+            <member value='1' />
+            <member value='2' />
+            <member value='3' />
+            <member value='4' />
+            <member value='5' />
+            <member value='6' />
+            <member value='7' />
+            <member value='8' />
+            <member value='9' />
+          </members>
+        </column>
+        <column caption='Class' datatype='integer' name='[Pclass Parameter]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <members>
+            <member value='1' />
+            <member value='2' />
+            <member value='3' />
+          </members>
+        </column>
+        <column alias='male' caption='Gender' datatype='integer' name='[Sex Parameter]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <aliases>
+            <alias key='0' value='male' />
+            <alias key='1' value='female' />
+          </aliases>
+          <members>
+            <member alias='male' value='0' />
+            <member alias='female' value='1' />
+          </members>
+        </column>
+        <column caption='# of siblings/spouses with you' datatype='integer' name='[Sib Sp Parameter]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <members>
+            <member value='0' />
+            <member value='1' />
+            <member value='2' />
+            <member value='3' />
+            <member value='4' />
+            <member value='5' />
+            <member value='8' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98230' id='7' param='horz' w='99064' x='468' y='885'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98230' id='5' w='89702' x='468' y='885'>
+              <zone h='98230' id='3' name='Sheet 1' w='44851' x='468' y='885'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='98230' id='14' name='Sheet 2' w='44851' x='45319' y='885'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98230' id='6' is-fixed='true' param='vert' w='9362' x='90170' y='885'>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='8' mode='compact' param='[Parameters].[Age Parameter]' w='9362' x='90170' y='885'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='9' mode='compact' param='[Parameters].[Parch Parameter]' w='9362' x='90170' y='6637'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='10' mode='compact' param='[Parameters].[Sib Sp Parameter]' w='9362' x='90170' y='12389'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='11' mode='compact' param='[Parameters].[Pclass Parameter]' w='9362' x='90170' y='18141'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='8297' id='12' mode='slider' param='[Parameters].[Fare Parameter]' w='9362' x='90170' y='23893'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='13' mode='compact' param='[Parameters].[Sex Parameter]' w='9362' x='90170' y='32190'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='16' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98230' id='15' param='vert' w='99064' x='468' y='885'>
+                <zone fixed-size='280' h='98230' id='3' is-fixed='true' name='Sheet 1' w='44851' x='468' y='885'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98230' id='14' is-fixed='true' name='Sheet 2' w='44851' x='45319' y='885'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='8' mode='compact' param='[Parameters].[Age Parameter]' w='9362' x='90170' y='885'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='9' mode='compact' param='[Parameters].[Parch Parameter]' w='9362' x='90170' y='6637'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='10' mode='compact' param='[Parameters].[Sib Sp Parameter]' w='9362' x='90170' y='12389'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='11' mode='compact' param='[Parameters].[Pclass Parameter]' w='9362' x='90170' y='18141'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='8297' id='12' mode='slider' param='[Parameters].[Fare Parameter]' w='9362' x='90170' y='23893'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='paramctrl' _.fcp.SetMembershipControl.true...type-v2='paramctrl' h='5752' id='13' mode='compact' param='[Parameters].[Sex Parameter]' w='9362' x='90170' y='32190'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{70DDA650-2699-456D-AFC0-66468C9AFABE}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Age Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parch Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Sib Sp Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Pclass Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Fare Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Sex Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.113eblu0sv9l1g1e7ckks1xct03y].[none:Age:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F7AFBBCF-E2F6-4218-8453-A41FB5958F90}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parch Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Sib Sp Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Age Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Pclass Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Fare Parameter]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Sex Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5139CAE9-8F1E-48D1-B3B6-0C02287BC519}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='8' />
+      <simple-id uuid='{7EF6B5A3-13DE-4AB9-90F6-7D7CBD2C6380}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      TkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='123'>
+      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
+      Vt8AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='116'>
+      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
+      KJm/AJVAngCH1CcbAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>

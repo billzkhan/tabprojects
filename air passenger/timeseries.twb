@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20204.21.0315.1000                               -->
+<workbook original-version='18.1' source-build='2020.4.3 (20204.21.0315.1000)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='AR(Time lag)' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+        <calculation class='tableau' formula='5' />
+        <range max='12' min='1' />
+      </column>
+      <column caption='MA (Moving Average)' datatype='integer' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <members>
+          <member value='0' />
+          <member value='1' />
+        </members>
+      </column>
+      <column caption='l (Seasonal Difference)' datatype='integer' name='[Parameter 3]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <members>
+          <member value='0' />
+          <member value='1' />
+          <member value='2' />
+        </members>
+      </column>
+      <column caption='Months Forecast' datatype='integer' name='[Parameter 4]' param-domain-type='range' role='measure' type='quantitative' value='2'>
+        <calculation class='tableau' formula='2' />
+        <range max='24' min='0' />
+      </column>
+    </datasource>
+    <datasource caption='AirPassengers' inline='true' name='federated.131jtrj0nd7jpl1c9twjz1f4n10w' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='AirPassengers' name='textscan.1b1afvg1btjkkz0zocqng0lrc055'>
+            <connection class='textscan' directory='D:/BILAL/tabprojects/air passenger/archive (1)' filename='AirPassengers.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1b1afvg1btjkkz0zocqng0lrc055' name='AirPassengers.csv' table='[AirPassengers#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='string' name='Month' ordinal='0' />
+            <column datatype='real' name='#Passengers' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1b1afvg1btjkkz0zocqng0lrc055' name='AirPassengers.csv' table='[AirPassengers#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='string' name='Month' ordinal='0' />
+            <column datatype='real' name='#Passengers' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[AirPassengers.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[AirPassengers.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>#Passengers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[#Passengers]</local-name>
+            <parent-name>[AirPassengers.csv]</parent-name>
+            <remote-alias>#Passengers</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Month date' datatype='datetime' name='[Calculation_258394074864279552]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATEPARSE(&quot;yyyy-MM&quot;,[Month])' />
+      </column>
+      <column caption='Forecast date' datatype='date' name='[Calculation_258394074864488449]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE(DATETRUNC(&apos;month&apos;,DATEADD(&apos;month&apos;,[Parameters].[Parameter 4],[Calculation_258394074864279552])))' />
+      </column>
+      <column caption='Number of Passengers' datatype='real' name='[Calculation_258394074867798018]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOOKUP(SUM([#Passengers]),[Parameters].[Parameter 4])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Past vs Future' datatype='string' name='[Calculation_258394074868887555]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF LAST() &lt; [Parameters].[Parameter 4]&#13;&#10;THEN &apos;Forecast&apos;&#13;&#10;ELSE &apos;Actual&apos;&#13;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='ARIMA' datatype='real' name='[Calculation_258394074870140932]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&apos;&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import matplotlib.pylab as plt&#13;&#10;from matplotlib.pylab import rcParams&#13;&#10;&#13;&#10;dates = _arg1&#13;&#10;passeng = _arg2&#13;&#10;order_arima = min(_arg3)&#13;&#10;seasonal_diff = min (_arg4)&#13;&#10;ma_param = min (_arg5)&#13;&#10;months_forecast = min(_arg6)&#13;&#10;ts = pd.DataFrame({&quot;dates&quot;: dates,&quot;Passengers&quot;: passeng})&#13;&#10;ts[&quot;Passengers&quot;] = ts[&quot;Passengers&quot;].astype(&quot;float64&quot;)&#13;&#10;ts = ts.set_index([&quot;dates&quot;])&#13;&#10;ts_log = np.log(ts)&#13;&#10;ts_log.index = pd.to_datetime(ts_log.index)&#13;&#10;&#13;&#10;ts_log_diff = ts_log - ts_log.shift()&#13;&#10;ts_log_diff[&quot;Passengers&quot;][0] = 0&#13;&#10;from statsmodels.tsa.arima_model import ARIMA&#13;&#10;model = ARIMA(ts_log_diff, order=(order_arima, seasonal_diff, ma_param))&#13;&#10;results_ARIMA = model.fit(disp=-1)&#13;&#10;predictions_value = results_ARIMA.forecast(months_forecast)[0]&#13;&#10;from dateutil.relativedelta import relativedelta&#13;&#10;add_month = relativedelta(months=1)&#13;&#10;predictions_dates = list()&#13;&#10;for i in range(months_forecast):&#13;&#10;    predictions_dates.append ( results_ARIMA.fittedvalues.index[-1] + ((i+1)*add_month))&#13;&#10;forecast_log_diff = pd.Series(predictions_value, index=predictions_dates)&#13;&#10;predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)&#13;&#10;predictions_ARIMA_diff_cumsum = predictions_ARIMA_diff.cumsum()&#13;&#10;predictions_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[0]), index=ts_log.index)&#13;&#10;predictions_ARIMA_log = predictions_ARIMA_log.add(predictions_ARIMA_diff_cumsum,fill_value=0)&#13;&#10;predictions_ARIMA = np.exp(predictions_ARIMA_log)&#13;&#10;forecast_log_diff_ARIMA = pd.Series(forecast_log_diff, copy=True)&#13;&#10;forecast_ARIMA_log_diff_cumsum = forecast_log_diff_ARIMA.cumsum()&#13;&#10;forecast_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[-1]), index=forecast_log_diff_ARIMA.index)&#13;&#10;forecast_ARIMA_log = forecast_ARIMA_log.add(forecast_ARIMA_log_diff_cumsum,fill_value=0)&#13;&#10;forecast_ARIMA = np.exp(forecast_ARIMA_log)&#13;&#10;return list(predictions_ARIMA)&#13;&#10;&apos;,&#13;&#10;ATTR([Month]), ATTR([#Passengers]), MIN([Parameters].[Parameter 1]), MIN([Parameters].[Parameter 3]), &#13;&#10;MIN([Parameters].[Parameter 2]), MIN([Parameters].[Parameter 4]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Forecast' datatype='real' name='[Calculation_258394074871271429]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&apos;&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import matplotlib.pylab as plt&#13;&#10;from matplotlib.pylab import rcParams&#13;&#10;dates = _arg1&#13;&#10;passeng = _arg2&#13;&#10;order_arima = min(_arg3)&#13;&#10;seasonal_diff = min (_arg4)&#13;&#10;ma_param = min (_arg5)&#13;&#10;months_forecast = min(_arg6)&#13;&#10;ts = pd.DataFrame({&quot;dates&quot;: dates,&quot;Passengers&quot;: passeng})&#13;&#10;ts[&quot;Passengers&quot;] = ts[&quot;Passengers&quot;].astype(&quot;float64&quot;)&#13;&#10;ts = ts.set_index([&quot;dates&quot;])&#13;&#10;ts_log = np.log(ts)&#13;&#10;ts_log.index = pd.to_datetime(ts_log.index)&#13;&#10;ts_log_diff = ts_log - ts_log.shift()&#13;&#10;ts_log_diff[&quot;Passengers&quot;][0] = 0&#13;&#10;from statsmodels.tsa.arima_model import ARIMA&#13;&#10;model = ARIMA(ts_log_diff, order=(order_arima, seasonal_diff, ma_param))&#13;&#10;results_ARIMA = model.fit(disp=-1)&#13;&#10;predictions_value = results_ARIMA.forecast(months_forecast)[0]&#13;&#10;from dateutil.relativedelta import relativedelta&#13;&#10;add_month = relativedelta(months=1)&#13;&#10;predictions_dates = list()&#13;&#10;for i in range(months_forecast):&#13;&#10;    predictions_dates.append ( results_ARIMA.fittedvalues.index[-1] + ((i+1)*add_month))&#13;&#10;forecast_log_diff = pd.Series(predictions_value, index=predictions_dates)&#13;&#10;predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)&#13;&#10;predictions_ARIMA_diff_cumsum = predictions_ARIMA_diff.cumsum()&#13;&#10;predictions_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[0]), index=ts_log.index)&#13;&#10;predictions_ARIMA_log = predictions_ARIMA_log.add(predictions_ARIMA_diff_cumsum,fill_value=0)&#13;&#10;predictions_ARIMA = np.exp(predictions_ARIMA_log)&#13;&#10;forecast_log_diff_ARIMA = pd.Series(forecast_log_diff, copy=True)&#13;&#10;forecast_ARIMA_log_diff_cumsum = forecast_log_diff_ARIMA.cumsum()&#13;&#10;forecast_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[-1]), index=forecast_log_diff_ARIMA.index)&#13;&#10;forecast_ARIMA_log = forecast_ARIMA_log.add(forecast_ARIMA_log_diff_cumsum,fill_value=0)&#13;&#10;forecast_ARIMA = np.exp(forecast_ARIMA_log)&#13;&#10;forecast_ARIMA_2 = predictions_ARIMA.append(forecast_ARIMA)&#13;&#10;forecast_ARIMA_2 = forecast_ARIMA_2[len(forecast_ARIMA):]&#13;&#10;return list(forecast_ARIMA_2)&#13;&#10;&apos;,&#13;&#10;ATTR([Month]), ATTR([#Passengers]), min([Parameters].[Parameter 1]), MIN([Parameters].[Parameter 3]),&#13;&#10;MIN([Parameters].[Parameter 2]), MIN([Parameters].[Parameter 4]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='MSE' datatype='real' name='[Calculation_258394074871578630]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&apos;&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import matplotlib.pylab as plt&#13;&#10;from matplotlib.pylab import rcParams&#13;&#10;dates = _arg1&#13;&#10;passeng = _arg2&#13;&#10;order_arima = min(_arg3)&#13;&#10;seasonal_diff = min (_arg4)&#13;&#10;ma_param = min (_arg5)&#13;&#10;months_forecast = min(_arg6)&#13;&#10;ts = pd.DataFrame({&quot;dates&quot;: dates,&quot;Passengers&quot;: passeng})&#13;&#10;ts[&quot;Passengers&quot;] = ts[&quot;Passengers&quot;].astype(&quot;float64&quot;)&#13;&#10;ts = ts.set_index([&quot;dates&quot;])&#13;&#10;ts_log = np.log(ts)&#13;&#10;ts_log.index = pd.to_datetime(ts_log.index)&#13;&#10;ts_log_diff = ts_log - ts_log.shift()&#13;&#10;ts_log_diff[&quot;Passengers&quot;][0] = 0&#13;&#10;from statsmodels.tsa.arima_model import ARIMA&#13;&#10;model = ARIMA(ts_log_diff, order=(order_arima, seasonal_diff, ma_param))&#13;&#10;results_ARIMA = model.fit(disp=-1)&#13;&#10;predictions_value = results_ARIMA.forecast(months_forecast)[0]&#13;&#10;from dateutil.relativedelta import relativedelta&#13;&#10;add_month = relativedelta(months=1)&#13;&#10;predictions_dates = list()&#13;&#10;for i in range(months_forecast):&#13;&#10;    predictions_dates.append ( results_ARIMA.fittedvalues.index[-1] + ((i+1)*add_month))&#13;&#10;forecast_log_diff = pd.Series(predictions_value, index=predictions_dates)&#13;&#10;predictions_ARIMA_diff = pd.Series(results_ARIMA.fittedvalues, copy=True)&#13;&#10;predictions_ARIMA_diff_cumsum = predictions_ARIMA_diff.cumsum()&#13;&#10;predictions_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[0]), index=ts_log.index)&#13;&#10;predictions_ARIMA_log = predictions_ARIMA_log.add(predictions_ARIMA_diff_cumsum,fill_value=0)&#13;&#10;predictions_ARIMA = np.exp(predictions_ARIMA_log)&#13;&#10;forecast_log_diff_ARIMA = pd.Series(forecast_log_diff, copy=True)&#13;&#10;forecast_ARIMA_log_diff_cumsum = forecast_log_diff_ARIMA.cumsum()&#13;&#10;forecast_ARIMA_log = pd.Series(np.asscalar(ts_log.ix[-1]), index=forecast_log_diff_ARIMA.index)&#13;&#10;forecast_ARIMA_log = forecast_ARIMA_log.add(forecast_ARIMA_log_diff_cumsum,fill_value=0)&#13;&#10;forecast_ARIMA = np.exp(forecast_ARIMA_log)&#13;&#10;predictions_ARIMA_dataframe = pd.DataFrame(predictions_ARIMA)&#13;&#10;SSE = sum((ts.ix[:,0]-predictions_ARIMA_dataframe.ix[:,0])**2)&#13;&#10;return SSE&#13;&#10;&apos;,&#13;&#10;ATTR([Month]), ATTR([#Passengers]), MIN([Parameters].[Parameter 1]), MIN([Parameters].[Parameter 3]),&#13;&#10;MIN([Parameters].[Parameter 2]), MIN([Parameters].[Parameter 4]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='AirPassengers.csv' datatype='table' name='[__tableau_internal_object_id__].[AirPassengers.csv_A81DF7C658AA47019954E380DE355046]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;South Korea&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='AR(Time lag)' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+          <calculation class='tableau' formula='5' />
+          <range max='12' min='1' />
+        </column>
+        <column caption='MA (Moving Average)' datatype='integer' name='[Parameter 2]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+        </column>
+        <column caption='l (Seasonal Difference)' datatype='integer' name='[Parameter 3]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+        </column>
+        <column caption='Months Forecast' datatype='integer' name='[Parameter 4]' param-domain-type='range' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <range max='24' min='0' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='AirPassengers.csv' id='AirPassengers.csv_A81DF7C658AA47019954E380DE355046'>
+            <properties context=''>
+              <relation connection='textscan.1b1afvg1btjkkz0zocqng0lrc055' name='AirPassengers.csv' table='[AirPassengers#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+                  <column datatype='string' name='Month' ordinal='0' />
+                  <column datatype='real' name='#Passengers' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='AirPassengers' name='federated.131jtrj0nd7jpl1c9twjz1f4n10w' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Months Forecast' datatype='integer' name='[Parameter 4]' param-domain-type='range' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <range max='24' min='0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.131jtrj0nd7jpl1c9twjz1f4n10w'>
+            <column datatype='real' name='[#Passengers]' role='measure' type='quantitative' />
+            <column caption='Month date' datatype='datetime' name='[Calculation_258394074864279552]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPARSE(&quot;yyyy-MM&quot;,[Month])' />
+            </column>
+            <column caption='Forecast date' datatype='date' name='[Calculation_258394074864488449]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE(DATETRUNC(&apos;month&apos;,DATEADD(&apos;month&apos;,[Parameters].[Parameter 4],[Calculation_258394074864279552])))' />
+            </column>
+            <column caption='Number of Passengers' datatype='real' name='[Calculation_258394074867798018]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOOKUP(SUM([#Passengers]),[Parameters].[Parameter 4])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Past vs Future' datatype='string' name='[Calculation_258394074868887555]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF LAST() &lt; [Parameters].[Parameter 4]&#13;&#10;THEN &apos;Forecast&apos;&#13;&#10;ELSE &apos;Actual&apos;&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Month]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_258394074864488449]' derivation='Month' name='[mn:Calculation_258394074864488449:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_258394074867798018]' derivation='User' name='[usr:Calculation_258394074867798018:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+            <column-instance column='[Calculation_258394074868887555]' derivation='User' name='[usr:Calculation_258394074868887555:nk]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074867798018:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074867798018:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='8' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074868887555:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074867798018:qk]</rows>
+        <cols>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[mn:Calculation_258394074864488449:qk]</cols>
+        <show-full-range>
+          <column>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[Calculation_258394074864488449]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{D73870B7-913B-443F-8994-CC0058B86F15}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 4]' type='parameter' />
+            <card pane-specification-id='8' param='[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074868887555:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[none:Month:nk]</field>
+            <field>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[usr:Calculation_258394074868887555:nk]</field>
+            <field>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[yr:Calculation_258394074864279552:ok]</field>
+            <field>[federated.131jtrj0nd7jpl1c9twjz1f4n10w].[yr:Calculation_258394074864488449:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F99A00A4-86C3-4B2E-8D6B-E154B589F2DC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      gg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

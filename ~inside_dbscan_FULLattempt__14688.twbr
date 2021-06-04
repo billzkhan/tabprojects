@@ -1,0 +1,1036 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20204.21.0315.1000                               -->
+<workbook source-build='2020.4.3 (20204.21.0315.1000)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='min_sam' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <members>
+          <member value='1' />
+          <member value='2' />
+          <member value='3' />
+          <member value='4' />
+          <member value='5' />
+          <member value='6' />
+        </members>
+      </column>
+      <column caption='epsilon' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='0.38609304652326171'>
+        <calculation class='tableau' formula='0.38609304652326171' />
+        <range max='0.8' min='0.1' />
+      </column>
+    </datasource>
+    <datasource caption='flood' inline='true' name='federated.17x4t2d0gm1ov419fkk6i0st19zb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='flood' name='textscan.07ltn0w0th70i11bux68m0e80ub7'>
+            <connection class='textscan' directory='C:/Users/UserK/Desktop/flood_project' filename='flood.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.07ltn0w0th70i11bux68m0e80ub7' name='flood.csv' table='[flood#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='HH_ID' ordinal='0' />
+            <column datatype='integer' name='MN_ID' ordinal='1' />
+            <column datatype='integer' name='LINK_ID' ordinal='2' />
+            <column datatype='real' name='TRVL_SPD_x' ordinal='3' />
+            <column datatype='integer' name='TRVL_TM_x' ordinal='4' />
+            <column datatype='real' name='TRVL_SPD_y' ordinal='5' />
+            <column datatype='real' name='TRVL_TM_y' ordinal='6' />
+            <column datatype='integer' name='START_NODE_ID' ordinal='7' />
+            <column datatype='integer' name='END_NODE_ID' ordinal='8' />
+            <column datatype='integer' name='LINK_LEN' ordinal='9' />
+            <column datatype='string' name='ROAD_NM' ordinal='10' />
+            <column datatype='integer' name='SEQ_link' ordinal='11' />
+            <column datatype='string' name='ROAD_ROUTE_ID' ordinal='12' />
+            <column datatype='integer' name='ROUTE_DIR' ordinal='13' />
+            <column datatype='integer' name='SEQ_route' ordinal='14' />
+            <column datatype='string' name='MAIN_ROAD_YN' ordinal='15' />
+            <column datatype='real' name='O_x' ordinal='16' />
+            <column datatype='real' name='O_y' ordinal='17' />
+            <column datatype='real' name='D_x' ordinal='18' />
+            <column datatype='real' name='D_y' ordinal='19' />
+            <column datatype='real' name='diff' ordinal='20' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.07ltn0w0th70i11bux68m0e80ub7' name='flood.csv' table='[flood#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='integer' name='HH_ID' ordinal='0' />
+            <column datatype='integer' name='MN_ID' ordinal='1' />
+            <column datatype='integer' name='LINK_ID' ordinal='2' />
+            <column datatype='real' name='TRVL_SPD_x' ordinal='3' />
+            <column datatype='integer' name='TRVL_TM_x' ordinal='4' />
+            <column datatype='real' name='TRVL_SPD_y' ordinal='5' />
+            <column datatype='real' name='TRVL_TM_y' ordinal='6' />
+            <column datatype='integer' name='START_NODE_ID' ordinal='7' />
+            <column datatype='integer' name='END_NODE_ID' ordinal='8' />
+            <column datatype='integer' name='LINK_LEN' ordinal='9' />
+            <column datatype='string' name='ROAD_NM' ordinal='10' />
+            <column datatype='integer' name='SEQ_link' ordinal='11' />
+            <column datatype='string' name='ROAD_ROUTE_ID' ordinal='12' />
+            <column datatype='integer' name='ROUTE_DIR' ordinal='13' />
+            <column datatype='integer' name='SEQ_route' ordinal='14' />
+            <column datatype='string' name='MAIN_ROAD_YN' ordinal='15' />
+            <column datatype='real' name='O_x' ordinal='16' />
+            <column datatype='real' name='O_y' ordinal='17' />
+            <column datatype='real' name='D_x' ordinal='18' />
+            <column datatype='real' name='D_y' ordinal='19' />
+            <column datatype='real' name='diff' ordinal='20' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HH_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HH_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>HH_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MN_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MN_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>MN_ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LINK_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LINK_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>LINK_ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRVL_SPD_x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRVL_SPD_x]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>TRVL_SPD_x</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRVL_TM_x</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TRVL_TM_x]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>TRVL_TM_x</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRVL_SPD_y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRVL_SPD_y]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>TRVL_SPD_y</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRVL_TM_y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRVL_TM_y]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>TRVL_TM_y</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>START_NODE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[START_NODE_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>START_NODE_ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>END_NODE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[END_NODE_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>END_NODE_ID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LINK_LEN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LINK_LEN]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>LINK_LEN</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROAD_NM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ROAD_NM]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>ROAD_NM</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEQ_link</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEQ_link]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>SEQ_link</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROAD_ROUTE_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ROAD_ROUTE_ID]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>ROAD_ROUTE_ID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ROUTE_DIR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ROUTE_DIR]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>ROUTE_DIR</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEQ_route</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEQ_route]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>SEQ_route</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MAIN_ROAD_YN</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MAIN_ROAD_YN]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>MAIN_ROAD_YN</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>O_x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[O_x]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>O_x</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>O_y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[O_y]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>O_y</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>D_x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[D_x]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>D_x</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>D_y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[D_y]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>D_y</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diff</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[diff]</local-name>
+            <parent-name>[flood.csv]</parent-name>
+            <remote-alias>diff</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='pypy' datatype='integer' datatype-customized='true' name='[Calculation_479633401680986112]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='SCRIPT_INT(&quot;import numpy as np&#13;&#10;from sklearn.cluster import DBSCAN&#13;&#10;X = np.column_stack([np.radians(_arg1),np.radians(_arg2)])&#13;&#10;div = _arg4[0]/6371.00&#13;&#10;db = DBSCAN(eps=div,min_samples=_arg3[0],metric=&apos;haversine&apos;).fit(X)&#13;&#10;return db.labels_.tolist()&quot;,&#13;&#10;AVG([O_y]),AVG([O_x]),[Parameters].[Parameter 1],[Parameters].[Parameter 2])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[D_x]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[D_y]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='End Node Id' datatype='integer' name='[END_NODE_ID]' role='dimension' type='ordinal' />
+      <column caption='Hh Id' datatype='integer' name='[HH_ID]' role='dimension' type='ordinal' />
+      <column caption='Link Id' datatype='integer' name='[LINK_ID]' role='dimension' type='ordinal' />
+      <column caption='Link Len' datatype='integer' name='[LINK_LEN]' role='measure' type='quantitative' />
+      <column caption='Main Road Yn' datatype='string' name='[MAIN_ROAD_YN]' role='dimension' type='nominal' />
+      <column caption='Mn Id' datatype='integer' name='[MN_ID]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='O x' datatype='real' name='[O_x]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Avg' caption='O y' datatype='real' name='[O_y]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Road Nm' datatype='string' name='[ROAD_NM]' role='dimension' type='nominal' />
+      <column caption='Road Route Id' datatype='string' name='[ROAD_ROUTE_ID]' role='dimension' type='nominal' />
+      <column caption='Route Dir' datatype='integer' name='[ROUTE_DIR]' role='measure' type='ordinal' />
+      <column caption='SEQ link' datatype='integer' name='[SEQ_link]' role='measure' type='quantitative' />
+      <column caption='SEQ route' datatype='integer' name='[SEQ_route]' role='measure' type='quantitative' />
+      <column caption='Start Node Id' datatype='integer' name='[START_NODE_ID]' role='dimension' type='ordinal' />
+      <column caption='TRVL SPD x' datatype='real' name='[TRVL_SPD_x]' role='measure' type='quantitative' />
+      <column caption='TRVL SPD y' datatype='real' name='[TRVL_SPD_y]' role='measure' type='quantitative' />
+      <column caption='TRVL TM x' datatype='integer' name='[TRVL_TM_x]' role='measure' type='quantitative' />
+      <column caption='TRVL TM y' datatype='real' name='[TRVL_TM_y]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='flood.csv' datatype='table' name='[__tableau_internal_object_id__].[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]' role='measure' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/UserK/Desktop/flood.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/12/2021 05:05:45 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='flood' increment-value='%null%' refresh-type='create' rows-inserted='1386623' timestamp-start='2021-05-12 05:05:45.857' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>HH_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[HH_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>HH_ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MN_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MN_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MN_ID</remote-alias>
+              <ordinal>1</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LINK_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LINK_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LINK_ID</remote-alias>
+              <ordinal>2</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>85911</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRVL_SPD_x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRVL_SPD_x]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TRVL_SPD_x</remote-alias>
+              <ordinal>3</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1808</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRVL_TM_x</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TRVL_TM_x]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TRVL_TM_x</remote-alias>
+              <ordinal>4</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1364</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRVL_SPD_y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRVL_SPD_y]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TRVL_SPD_y</remote-alias>
+              <ordinal>5</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1740</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRVL_TM_y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRVL_TM_y]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TRVL_TM_y</remote-alias>
+              <ordinal>6</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1102</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>START_NODE_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[START_NODE_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>START_NODE_ID</remote-alias>
+              <ordinal>7</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27877</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>END_NODE_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[END_NODE_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>END_NODE_ID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27796</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LINK_LEN</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LINK_LEN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LINK_LEN</remote-alias>
+              <ordinal>9</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6347</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ROAD_NM</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ROAD_NM]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ROAD_NM</remote-alias>
+              <ordinal>10</ordinal>
+              <family>flood.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4206</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LKO_RKR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEQ_link</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEQ_link]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEQ_link</remote-alias>
+              <ordinal>11</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>85911</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ROAD_ROUTE_ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ROAD_ROUTE_ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ROAD_ROUTE_ID</remote-alias>
+              <ordinal>12</ordinal>
+              <family>flood.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2980</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LKO_RKR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ROUTE_DIR</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ROUTE_DIR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ROUTE_DIR</remote-alias>
+              <ordinal>13</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEQ_route</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEQ_route]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEQ_route</remote-alias>
+              <ordinal>14</ordinal>
+              <family>flood.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>83</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MAIN_ROAD_YN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MAIN_ROAD_YN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MAIN_ROAD_YN</remote-alias>
+              <ordinal>15</ordinal>
+              <family>flood.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LKO_RKR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>POSX_x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[POSX_x]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>POSX_x</remote-alias>
+              <ordinal>16</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27847</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>POSY_x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[POSY_x]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>POSY_x</remote-alias>
+              <ordinal>17</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27847</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>POSX_y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[POSX_y]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>POSX_y</remote-alias>
+              <ordinal>18</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27724</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>POSY_y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[POSY_y]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>POSY_y</remote-alias>
+              <ordinal>19</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27767</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>O_x</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[O_x]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>O_x</remote-alias>
+              <ordinal>20</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27877</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>O_y</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[O_y]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>O_y</remote-alias>
+              <ordinal>21</ordinal>
+              <family>flood.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27877</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='categorical' column='[Calculation_479633401680986112]'>
+          <groupfilter function='level-members' level='[Calculation_479633401680986112]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        </filter>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;South Korea&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='min_sam' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+        </column>
+        <column caption='epsilon' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='0.38609304652326171'>
+          <calculation class='tableau' formula='0.38609304652326171' />
+          <range max='0.8' min='0.1' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='flood.csv' id='flood.csv_1CDAD0F2865B4AF3B6CD1D31D0C01040'>
+            <properties context=''>
+              <relation connection='textscan.07ltn0w0th70i11bux68m0e80ub7' name='flood.csv' table='[flood#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+                  <column datatype='integer' name='HH_ID' ordinal='0' />
+                  <column datatype='integer' name='MN_ID' ordinal='1' />
+                  <column datatype='integer' name='LINK_ID' ordinal='2' />
+                  <column datatype='real' name='TRVL_SPD_x' ordinal='3' />
+                  <column datatype='integer' name='TRVL_TM_x' ordinal='4' />
+                  <column datatype='real' name='TRVL_SPD_y' ordinal='5' />
+                  <column datatype='real' name='TRVL_TM_y' ordinal='6' />
+                  <column datatype='integer' name='START_NODE_ID' ordinal='7' />
+                  <column datatype='integer' name='END_NODE_ID' ordinal='8' />
+                  <column datatype='integer' name='LINK_LEN' ordinal='9' />
+                  <column datatype='string' name='ROAD_NM' ordinal='10' />
+                  <column datatype='integer' name='SEQ_link' ordinal='11' />
+                  <column datatype='string' name='ROAD_ROUTE_ID' ordinal='12' />
+                  <column datatype='integer' name='ROUTE_DIR' ordinal='13' />
+                  <column datatype='integer' name='SEQ_route' ordinal='14' />
+                  <column datatype='string' name='MAIN_ROAD_YN' ordinal='15' />
+                  <column datatype='real' name='O_x' ordinal='16' />
+                  <column datatype='real' name='O_y' ordinal='17' />
+                  <column datatype='real' name='D_x' ordinal='18' />
+                  <column datatype='real' name='D_y' ordinal='19' />
+                  <column datatype='real' name='diff' ordinal='20' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='flood' name='federated.17x4t2d0gm1ov419fkk6i0st19zb' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='min_sam' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+            </column>
+            <column caption='epsilon' datatype='real' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='0.38609304652326171'>
+              <calculation class='tableau' formula='0.38609304652326171' />
+              <range max='0.8' min='0.1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.17x4t2d0gm1ov419fkk6i0st19zb'>
+            <column caption='pypy' datatype='integer' datatype-customized='true' name='[Calculation_479633401680986112]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='SCRIPT_INT(&quot;import numpy as np&#13;&#10;from sklearn.cluster import DBSCAN&#13;&#10;X = np.column_stack([np.radians(_arg1),np.radians(_arg2)])&#13;&#10;div = _arg4[0]/6371.00&#13;&#10;db = DBSCAN(eps=div,min_samples=_arg3[0],metric=&apos;haversine&apos;).fit(X)&#13;&#10;return db.labels_.tolist()&quot;,&#13;&#10;AVG([O_y]),AVG([O_x]),[Parameters].[Parameter 1],[Parameters].[Parameter 2])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Hh Id' datatype='integer' name='[HH_ID]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='O x' datatype='real' name='[O_x]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Avg' caption='O y' datatype='real' name='[O_y]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column caption='Route Dir' datatype='integer' name='[ROUTE_DIR]' role='measure' type='ordinal' />
+            <column caption='TRVL SPD x' datatype='real' name='[TRVL_SPD_x]' role='measure' type='quantitative' />
+            <column caption='TRVL SPD y' datatype='real' name='[TRVL_SPD_y]' role='measure' type='quantitative' />
+            <column-instance column='[O_x]' derivation='Avg' name='[avg:O_x:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[O_y]' derivation='Avg' name='[avg:O_y:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[HH_ID]' derivation='None' name='[none:HH_ID:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[ROUTE_DIR]' derivation='None' name='[none:ROUTE_DIR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TRVL_SPD_x]' derivation='None' name='[none:TRVL_SPD_x:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRVL_SPD_y]' derivation='None' name='[none:TRVL_SPD_y:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_479633401680986112]' derivation='User' name='[usr:Calculation_479633401680986112:ok]' pivot='key' type='ordinal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:HH_ID:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:HH_ID:ok]' member='7' />
+              <groupfilter function='member' level='[none:HH_ID:ok]' member='8' />
+              <groupfilter function='member' level='[none:HH_ID:ok]' member='9' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:ROUTE_DIR:ok]'>
+            <groupfilter function='member' level='[none:ROUTE_DIR:ok]' member='3501' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_x:qk]' included-values='in-range'>
+            <min>5.0</min>
+            <max>15.0</max>
+          </filter>
+          <filter class='quantitative' column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_y:qk]' included-values='in-range'>
+            <min>18.0</min>
+            <max>188.0</max>
+          </filter>
+          <filter class='categorical' column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='0' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='1' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='2' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='3' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='4' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='5' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='6' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='7' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='8' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='9' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='10' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='11' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='12' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='13' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='14' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='15' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='16' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='17' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='18' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='19' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='20' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='21' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='22' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='23' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='24' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='25' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='26' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='27' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='28' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='29' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='30' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='31' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='32' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='33' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='34' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='35' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='36' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='37' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='38' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='39' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='40' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='41' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='42' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='43' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='44' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='45' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='46' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='47' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='48' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='49' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='50' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='51' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='52' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='53' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='54' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='55' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='56' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='57' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='58' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='59' />
+              <groupfilter function='member' level='[usr:Calculation_479633401680986112:ok]' member='60' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:HH_ID:ok]</column>
+            <column>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_x:qk]</column>
+            <column>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_y:qk]</column>
+            <column>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:ROUTE_DIR:ok]</column>
+            <column>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[avg:O_x:qk]' field-type='quantitative' max='14207013.903774204' min='14145084.653304625' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[avg:O_y:qk]' field-type='quantitative' max='4365822.5482326718' min='4330434.4035252249' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]' />
+              <text column='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[avg:O_y:qk]</rows>
+        <cols>[federated.17x4t2d0gm1ov419fkk6i0st19zb].[avg:O_x:qk]</cols>
+      </table>
+      <simple-id uuid='{929366A4-025D-4D90-B30D-31B95667E1FF}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5101F9E4-3F21-497F-A00A-0E4BC581C828}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]' show-morefewerbutton='false' type='filter' />
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:ROUTE_DIR:ok]' type='filter' />
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_y:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:TRVL_SPD_x:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[none:HH_ID:ok]' type='filter' />
+            <card mode='slider' param='[Parameters].[Parameter 2]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='2' param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]' type='color' />
+            <card param='[federated.17x4t2d0gm1ov419fkk6i0st19zb].[usr:Calculation_479633401680986112:ok]' type='highlighter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{AE2D69FA-F934-4415-A5A3-EDA9D0A756AC}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1FE3DD11-89A8-4F04-B276-80E4E72C7AE6}' />
+    </window>
+  </windows>
+</workbook>
